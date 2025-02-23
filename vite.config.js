@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { VitePWA } from 'vite-plugin-pwa';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
-  base: '/',
+  base: "/",
   server: {
-      host: true
+    host: true,
   },
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: "autoUpdate",
       manifest: {
         name: "Task Manager",
         short_name: "Tasks",
@@ -34,16 +34,14 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: ({ request }) =>
-              request.destination === "document",
+            urlPattern: ({ request }) => request.destination === "document",
             handler: "NetworkFirst",
             options: {
               cacheName: "pages",
             },
           },
           {
-            urlPattern: ({ request }) =>
-              request.destination === "image",
+            urlPattern: ({ request }) => request.destination === "image",
             handler: "CacheFirst",
             options: {
               cacheName: "images",
@@ -51,7 +49,8 @@ export default defineConfig({
           },
           {
             urlPattern: ({ request }) =>
-              request.destination === "script" || request.destination === "style",
+              request.destination === "script" ||
+              request.destination === "style",
             handler: "StaleWhileRevalidate",
             options: {
               cacheName: "assets",
