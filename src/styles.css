@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100%;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title */
+h1 {
+    color: black;
+    font-size: 26px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Task Form */
+.task-form {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.task-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.task-form button {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.task-form button:hover {
+    background: #0056b3;
+}
+
+/* Task List */
+.task-list ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: #eee;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.task-item span {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+/* Completed Task (Text Only) */
+.task-item.completed span {
+    text-decoration: line-through;
+    color: #555;
+}
+
+/* Delete Button */
+.task-item button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+}
+
+/* Hide Default Checkbox */
+.task-item input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom Checkmark */
+.checkmark {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.checkmark.unchecked {
+    color: gray;
+}
+
+.checkmark.checked {
+    color: green;
+}
+
+/* Prevent checkmark from getting strikethrough */
+.task-item.completed .checkmark {
+    text-decoration: none;
+}
+
+.install-btn {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.install-btn:hover {
+    background: #218838;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 450px) {
+    body {
+        padding: 10px 0;
+        justify-content: flex-start;
+    }
+
+    .container {
+        width: 95%;
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .task-form input,
+    .task-form button {
+        font-size: 15px;
+    }
+
+    .task-item {
+        font-size: 15px;
+    }
+}

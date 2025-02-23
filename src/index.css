@@ -1,0 +1,82 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Remove unnecessary color overrides */
+  color: #222;
+  background-color: #f4f4f4;
+}
+
+/* Ensures full width without forcing min-width */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Align content properly */
+  align-items: center;
+  justify-content: flex-start; /* Push content to top */
+  width: 100%;
+  min-width: auto; /* Prevents forced min-width */
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevents side-scrolling */
+}
+
+/* Ensures main container is centered and responsive */
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Adjustments */
+h1 {
+  font-size: 2em;
+  text-align: center;
+  color: black;
+}
+
+/* Button Styling */
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+button:hover {
+  background: #0056b3;
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 450px) {
+  body {
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .container {
+    width: 95%;
+    max-width: 350px;
+    padding: 15px;
+    box-shadow: none;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
