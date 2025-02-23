@@ -162,6 +162,40 @@ h1 {
   background: #218838;
 }
 
+/* iPhone Install Instructions - Clickable Text */
+.toggle-instructions {
+    color: #007bff; /* Blue color */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.toggle-instructions span {
+    border-bottom: 2px solid transparent; /* Invisible border for smooth effect */
+    transition: border-bottom 0.3s ease;
+}
+
+.toggle-instructions:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.toggle-instructions:hover span {
+    border-bottom: 2px solid #0056b3; /* Underline effect on hover */
+}
+
+/* iPhone Install Instructions Box */
+.iphone-instructions {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Mobile Responsiveness */
 @media (max-width: 450px) {
   body {
